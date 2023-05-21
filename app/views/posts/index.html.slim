@@ -1,6 +1,11 @@
 div
-  h1 ピカわかメニュー
+  h1 やることリスト
   ul
-    li Ruby
-    li Rails
-    li HTML
+    li 
+      = link_to '新規投稿', new_post_path
+div class="posts"
+  - @posts.each do |post|
+    p 
+      = post.created_at
+    p 
+      = post.text
